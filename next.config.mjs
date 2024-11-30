@@ -1,4 +1,5 @@
 export default {
+  swcMinify: false,
   images: {
     remotePatterns: [
       {
