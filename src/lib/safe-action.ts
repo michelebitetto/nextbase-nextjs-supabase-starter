@@ -1,6 +1,6 @@
-import 'server-only';
 import { createSupabaseClient } from '@/supabase-clients/server';
 import { createSafeActionClient } from 'next-safe-action';
+import 'server-only';
 
 export const actionClient = createSafeActionClient().use(
   async ({ next, clientInput, metadata }) => {
