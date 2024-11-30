@@ -1,3 +1,4 @@
+import tailwindcssAnimate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
@@ -61,7 +62,7 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-sans)'].concat(fontFamily.sans),
+        sans: ['var(--font-sans)', ...fontFamily.sans],
       },
       keyframes: {
         accordionDown: {
@@ -98,9 +99,7 @@ export default {
       },
     },
   },
-
   plugins: [
-    require('tailwindcss-animate'),
-    require('tailwindcss/defaultTheme'),
+    tailwindcssAnimate, // Usa l'importazione del modulo
   ],
 };
