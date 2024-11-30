@@ -1,4 +1,4 @@
-var fontFamily = require('tailwindcss/defaultTheme').fontFamily;
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
