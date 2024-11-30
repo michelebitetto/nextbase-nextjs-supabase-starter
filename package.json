@@ -4,6 +4,9 @@
   "repository": "git@github.com:imbhargav5/nextbase-nextjs13-supabase-starter.git",
   "author": "Bhargav Ponnapalli <imbhargav5@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "start": "next start",
