@@ -1,11 +1,11 @@
 'use client';
 
-import { useRef } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAction } from 'next-safe-action/hooks';
-import { toast } from 'sonner';
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useAction } from 'next-safe-action/hooks';
+import { useRouter } from 'next/navigation';
+import { useRef } from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
@@ -46,8 +46,7 @@ export const ClientPage: React.FC = () => {
       }
     },
     onError: ({ error }) => {
-      const errorMessage =
-        error.serverError ?? error.fetchError ?? 'Failed to create item';
+      const errorMessage = error.serverError ?? 'Failed to create item';
       toast.error(errorMessage, { id: toastRef.current });
       toastRef.current = undefined;
     },

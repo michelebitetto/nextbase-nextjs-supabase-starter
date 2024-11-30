@@ -1,26 +1,26 @@
 'use client';
 
-import { useRef } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAction } from 'next-safe-action/hooks';
-import { toast } from 'sonner';
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { motion } from 'framer-motion';
+import { useAction } from 'next-safe-action/hooks';
+import { useRouter } from 'next/navigation';
+import { useRef } from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
+import { z } from 'zod';
 
 import { T } from '@/components/ui/Typography';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import {
   Card,
+  CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
 } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import { insertPrivateItemAction } from '@/data/user/privateItems';
 
 const formSchema = z.object({
@@ -66,8 +66,7 @@ export const ClientPage: React.FC = () => {
       }
     },
     onError: ({ error }) => {
-      const errorMessage =
-        error.serverError ?? error.fetchError ?? 'Failed to create item';
+      const errorMessage = error.serverError ?? 'Failed to create item';
       toast.error(errorMessage, { id: toastRef.current });
       toastRef.current = undefined;
     },

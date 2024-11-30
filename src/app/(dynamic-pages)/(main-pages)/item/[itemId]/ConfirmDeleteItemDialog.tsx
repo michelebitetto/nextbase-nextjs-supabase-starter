@@ -1,10 +1,10 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAction } from 'next-safe-action/hooks';
-import { toast } from 'sonner';
 import { Trash } from 'lucide-react';
+import { useAction } from 'next-safe-action/hooks';
+import { useRouter } from 'next/navigation';
+import { useRef, useState } from 'react';
+import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -41,8 +41,7 @@ export const ConfirmDeleteItemDialog = ({
       setOpen(false);
     },
     onError: ({ error }) => {
-      const errorMessage =
-        error.serverError ?? error.fetchError ?? 'Failed to delete item';
+      const errorMessage = error.serverError ?? 'Failed to delete item';
       toast.error(errorMessage, { id: toastRef.current });
       toastRef.current = undefined;
       setOpen(false);

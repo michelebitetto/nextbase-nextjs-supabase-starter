@@ -39,8 +39,7 @@ export const ConfirmDeleteItemDialog = ({ itemId }: Props): JSX.Element => {
       setOpen(false);
     },
     onError: ({ error }) => {
-      const errorMessage =
-        error.serverError ?? error.fetchError ?? 'Failed to delete item';
+      const errorMessage = error.serverError ?? 'Failed to delete item';
       toast.error(errorMessage, { id: toastRef.current });
       toastRef.current = undefined;
     },
